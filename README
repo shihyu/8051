@@ -1,0 +1,25 @@
+首先下載個sdcc 1： sudo apt-get install sdcc 
+
+2： sudo apt-get install libvte-dev
+3： 安裝 gSTC-ISP 
+
+下載地址 http://pan.baidu.com/s/15qABX 或 
+
+http://sourceforge.net/projects/gstcisp/files/
+
+gSTC-ISP 安裝方法
+1：解壓 tar -zxvf gSTC-ISP_v1.0.tar.gz
+2： 進入目錄 gSTC-ISP 
+
+3：運行 ./configure
+4: 進入到src目錄下，打開 makefile 把CFLAGS = -g -O2修改為CFLAGS = -g -O2 -I/usr/include/vte-0.0/
+5：編譯安裝 ：make; make install
+6：運行 可用命令 gSTCISP
+
+使用方法 1：編譯 sdcc -mmcs51 --std-sdcc89 --verbose first.c
+// makebin是sdcc的一個工具，應該默認裝的了
+2：生成bin文件 makebin -p first.ihx first.bin
+3：打開 gSTCISP 
+
+4：選擇 /dev/ttyUSB0 (or 1) , 和 4800 bauds
+5：然後就是下載了  // 這步驟祥細不知道如何接下去
